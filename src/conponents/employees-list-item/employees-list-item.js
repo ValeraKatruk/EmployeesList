@@ -12,7 +12,7 @@ const EmployeesListItem = (props) =>  {
   if (rise) {
     classNames += " like";
   }
-
+ 
   return (
     <li className={classNames}>
       <span className="list-group-item-label" onClick={onToggleProp} data-toggle="rise">
