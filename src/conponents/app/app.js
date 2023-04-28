@@ -1,4 +1,5 @@
 import { Component } from "react";
+import styled from 'styled-components';
 
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
@@ -89,7 +90,8 @@ class App extends Component {
     this.setState(({ data }) => ({
       data: data.map((item) => {
         if (item.id === id) {
-          return { ...item, salary: parseInt(event)};
+          if (event === "" || event === "$" || isNaN(event)) event = 0;
+          return { ...item, salary: `${parseInt(event)}` };
         }
         return item;
       }),
@@ -111,7 +113,12 @@ class App extends Component {
             <AppFilter filter={filter} onFilterEmp={this.onFilterEmp} />
           </div>
         </div>
-        <EmployeesList data={visibleEmp} onDelete={this.deleteItem} onToggleProp={this.onToggleProp} onChangeSalary = {this.onChangeSalary}/>
+        <EmployeesList
+          data={visibleEmp}
+          onDelete={this.deleteItem}
+          onToggleProp={this.onToggleProp}
+          onChangeSalary={this.onChangeSalary}
+        />
         <EmployeesAddForm onAdd={this.addItem} />
       </div>
     );

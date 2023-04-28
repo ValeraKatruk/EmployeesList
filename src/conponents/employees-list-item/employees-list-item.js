@@ -25,7 +25,9 @@ class EmployeesListItem extends Component  {
 
   return (
     <li className={classNames}>
-      <span className="list-group-item-label" onClick={onToggleProp} data-toggle="rise">
+      <span className="list-group-item-label" 
+      onClick={onToggleProp} 
+      data-toggle="rise">
         {name} {surname}
       </span>
       <input 
