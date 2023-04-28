@@ -1,5 +1,4 @@
 import { Component } from "react";
-import styled from 'styled-components';
 
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
