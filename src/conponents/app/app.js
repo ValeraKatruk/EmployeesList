@@ -89,7 +89,7 @@ class App extends Component {
     this.setState(({ data }) => ({
       data: data.map((item) => {
         if (item.id === id) {
-          if (event === "" || event === "$" || isNaN(event)) event = 0;
+          if (event === "" || event === "$") event = 0;
           return { ...item, salary: `${parseInt(event)}` };
         }
         return item;
